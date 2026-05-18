@@ -1,0 +1,29 @@
+seed: 42
+
+device:
+  use_cuda: true
+
+training:
+  epochs: 50
+  batch_size: 8
+  learning_rate: 0.001
+
+  teacher_forcing:
+    start: 1.0
+    end: 0.2
+
+model:
+  feature_dim: 128
+  hidden_dim: 128
+  dropout: 0.2
+
+data:
+  image_size: 128
+  sequence_length: 21
+
+renderer:
+  arm_radius: 4
+  target_size: 6
+
+logging:
+  experiment_name: "cnn_lstm_autoregression"
