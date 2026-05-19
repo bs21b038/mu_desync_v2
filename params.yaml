@@ -7,6 +7,7 @@ training:
   epochs: 50
   batch_size: 8
   learning_rate: 0.001
+  num_workers: 0
 
   teacher_forcing:
     start: 1.0
@@ -18,6 +19,12 @@ model:
   dropout: 0.2
 
 dataset:
+  processed_dir: "data/processed"
+
+  train_file: "train.pt"
+  val_file: "val.pt"
+  test_file: "test.pt"
+
   image_size: 128
   sequence_length: 21
 
