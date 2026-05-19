@@ -21,6 +21,7 @@ venv/
 # MLflow
 # -----------------------------
 mlruns/
+mlflow.db
 
 # -----------------------------
 # DVC Cache
@@ -56,3 +57,4 @@ Thumbs.db
 # -----------------------------
 logs/
 *.log
+/checkpoints

@@ -4,7 +4,7 @@ device:
   use_cuda: true
 
 training:
-  epochs: 50
+  epochs: 30
   batch_size: 8
   learning_rate: 0.001
   num_workers: 0

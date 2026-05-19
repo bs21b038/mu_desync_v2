@@ -3,14 +3,27 @@ stages:
     cmd: python -m src.data.generate_dataset
 
     deps:
-      - data/raw/splined_trajectories_3.txt
-      - src/data/generate_dataset.py
-      - src/data/renderer.py
+    - data/raw/splined_trajectories_3.txt
+    - src/data/generate_dataset.py
+    - src/data/renderer.py
 
     params:
-      - seed
-      - dataset
-      - renderer
+    - seed
+    - dataset
+    - renderer
 
     outs:
-      - data/processed
+    - data/processed
+  train_model:
+    cmd: python -m src.training.train
+    deps:
+    - data/preprocessed/train.pt
+    - data/preprocessed/val.pt
+    - src/data/dataset.py
+    - src/models/cnn_lstm.py
+    - src/training/train.py
+    params:
+    - model
+    - training
+    outs:
+    - checkpoints
