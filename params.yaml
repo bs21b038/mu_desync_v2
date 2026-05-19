@@ -17,11 +17,18 @@ model:
   hidden_dim: 128
   dropout: 0.2
 
-data:
+dataset:
   image_size: 128
   sequence_length: 21
 
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+
 renderer:
+  xlim: [-0.8, 0.8]
+  ylim: [-0.8, 0.8]
+
   arm_radius: 4
   target_size: 6
 

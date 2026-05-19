@@ -1,0 +1,41 @@
+schema: '2.0'
+stages:
+  generate_dataset:
+    cmd: python -m src.data.generate_dataset
+    deps:
+    - path: data/raw/splined_trajectories_3.txt
+      hash: md5
+      md5: 30daebdc58af5880977f71c1357c8e27
+      size: 352252
+    - path: src/data/generate_dataset.py
+      hash: md5
+      md5: 41caa05798d0f6fa9e231ce656af58a8
+      size: 3949
+    - path: src/data/renderer.py
+      hash: md5
+      md5: 0ca7223cdd18ccd8d6ddeea76a0931d1
+      size: 4507
+    params:
+      params.yaml:
+        dataset:
+          image_size: 128
+          sequence_length: 21
+          train_split: 0.7
+          val_split: 0.15
+          test_split: 0.15
+        renderer:
+          xlim:
+          - -0.8
+          - 0.8
+          ylim:
+          - -0.8
+          - 0.8
+          arm_radius: 4
+          target_size: 6
+        seed: 42
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: 7cbcbadc217018f57e78968a8d57b612.dir
+      size: 2056302525
+      nfiles: 3
